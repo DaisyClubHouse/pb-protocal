@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message GobandMessage {
+
+}
+
+// 创建房间请求
+message CreateRoomRequest {
+	string name = 1;
+}

@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package pb;
+
+enum ErrorCode {
+    // 成功
+    ErrorCodeSuccess = 0;
+    // 系统内部错误
+    ErrorSystemException = 1;
+    // 网络错误
+    ErrorNetworkException = 2;
+    // 用户密码错误
+    ErrorCodeUserPwdInvalid = 3;
+    // 用户不存在
+    ErrorUnknownUser = 4;
+    // 没有可用账户
+    ErrorNoAvailableAccount = 5;
+    // 聊天消息格式错误
+    ErrInvalidChatPattern = 6;
+    // 身份令牌认证失败
+    ErrorInvalidToken = 7;
+    // 未知消息类型
+    ErrorUnknownMessageType = 8;
+    // 消息内容解析出错
+    ErrorInvalidComplexContent = 9;
+    // 金额格式错误
+    ErrorInvalidRechargeCurrency = 10;
+    // 玩家未认证
+    ErrorUserNotAuth = 11;
+}

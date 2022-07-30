@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package pb;
+
+message UserMsgPack {
+	MessageKind kind = 1;
+	bytes data = 2;
+}
+
+enum MessageKind {
+	MsgNone = 0; // 占位
+
+	// ---------- room ---------- //
+	MsgCreateRoomRequest = 100; // 创建房间请求
+	MsgCreateRoomResponse = 101; // 创建房间响应
+
+	MsgEnterRoomRequest = 102; // 进入房间请求
+	MsgEnterRoomResponse = 103; // 进入房间响应
+
+	// ---------- broadcase -------//
+}
