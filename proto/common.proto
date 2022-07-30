@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package pb;
 
+option go_package = "github.com/DaisyClubHouse/proto";
+
 message UserMsgPack {
 	MessageKind kind = 1;
 	bytes data = 2;
