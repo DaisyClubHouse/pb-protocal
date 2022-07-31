@@ -2,14 +2,14 @@ syntax = "proto3";
 
 package pb;
 
-option go_package = "github.com/DaisyClubHouse/proto";
+option go_package = "./";
 
 message UserMsgPack {
-	MessageKind kind = 1;
+	MsgKind kind = 1;
 	bytes data = 2;
 }
 
-enum MessageKind {
+enum MsgKind {
 	MsgNone = 0; // 占位
 
 	// ---------- room ---------- //

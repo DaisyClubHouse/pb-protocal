@@ -4,7 +4,7 @@
 // 	protoc        v3.19.4
 // source: goband.proto
 
-package proto
+package __
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -20,57 +20,19 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type GobandMessage struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-}
-
-func (x *GobandMessage) Reset() {
-	*x = GobandMessage{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_goband_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *GobandMessage) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GobandMessage) ProtoMessage() {}
-
-func (x *GobandMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_goband_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GobandMessage.ProtoReflect.Descriptor instead.
-func (*GobandMessage) Descriptor() ([]byte, []int) {
-	return file_goband_proto_rawDescGZIP(), []int{0}
-}
-
 // 创建房间请求
 type CreateRoomRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	RoomTitle string `protobuf:"bytes,1,opt,name=room_title,json=roomTitle,proto3" json:"room_title,omitempty"`
 }
 
 func (x *CreateRoomRequest) Reset() {
 	*x = CreateRoomRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_goband_proto_msgTypes[1]
+		mi := &file_goband_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -83,7 +45,7 @@ func (x *CreateRoomRequest) String() string {
 func (*CreateRoomRequest) ProtoMessage() {}
 
 func (x *CreateRoomRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_goband_proto_msgTypes[1]
+	mi := &file_goband_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -96,12 +58,12 @@ func (x *CreateRoomRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateRoomRequest.ProtoReflect.Descriptor instead.
 func (*CreateRoomRequest) Descriptor() ([]byte, []int) {
-	return file_goband_proto_rawDescGZIP(), []int{1}
+	return file_goband_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *CreateRoomRequest) GetName() string {
+func (x *CreateRoomRequest) GetRoomTitle() string {
 	if x != nil {
-		return x.Name
+		return x.RoomTitle
 	}
 	return ""
 }
@@ -110,13 +72,11 @@ var File_goband_proto protoreflect.FileDescriptor
 
 var file_goband_proto_rawDesc = []byte{
 	0x0a, 0x0c, 0x67, 0x6f, 0x62, 0x61, 0x6e, 0x64, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x02,
-	0x70, 0x62, 0x22, 0x0f, 0x0a, 0x0d, 0x47, 0x6f, 0x62, 0x61, 0x6e, 0x64, 0x4d, 0x65, 0x73, 0x73,
-	0x61, 0x67, 0x65, 0x22, 0x27, 0x0a, 0x11, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x6f, 0x6f,
-	0x6d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x42, 0x21, 0x5a, 0x1f,
-	0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x69, 0x73, 0x79,
-	0x43, 0x6c, 0x75, 0x62, 0x48, 0x6f, 0x75, 0x73, 0x65, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62,
-	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x70, 0x62, 0x22, 0x32, 0x0a, 0x11, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x6f, 0x6f, 0x6d,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1d, 0x0a, 0x0a, 0x72, 0x6f, 0x6f, 0x6d, 0x5f,
+	0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x72, 0x6f, 0x6f,
+	0x6d, 0x54, 0x69, 0x74, 0x6c, 0x65, 0x42, 0x04, 0x5a, 0x02, 0x2e, 0x2f, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -131,10 +91,9 @@ func file_goband_proto_rawDescGZIP() []byte {
 	return file_goband_proto_rawDescData
 }
 
-var file_goband_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_goband_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_goband_proto_goTypes = []interface{}{
-	(*GobandMessage)(nil),     // 0: pb.GobandMessage
-	(*CreateRoomRequest)(nil), // 1: pb.CreateRoomRequest
+	(*CreateRoomRequest)(nil), // 0: pb.CreateRoomRequest
 }
 var file_goband_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
@@ -151,18 +110,6 @@ func file_goband_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_goband_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GobandMessage); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_goband_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateRoomRequest); i {
 			case 0:
 				return &v.state
@@ -181,7 +128,7 @@ func file_goband_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_goband_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
